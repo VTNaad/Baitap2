@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View, Alert, TouchableOpacity } from "react-native";
 import { register } from "../../api/API";
-import CommonStyles from "../../assets/styles/CommonStyles";
+import CommonStyles from "../../../assets/styles/CommonStyles";
 
 const Register = ({ navigation }) => {
     const [email, setEmail] = useState("");
-    const [fullName, setfullName] = useState("");
+    const [name, setName] = useState("");
     const [password, setPassword] = useState("");
 
     const handleRegister = async () => {
         try {
-            const data = await register(email, fullName, password);
+            const data = await register(name, email, password);
 
             if (data.success) {
                 Alert.alert("Success", data.message);
@@ -28,7 +28,7 @@ const Register = ({ navigation }) => {
             <Text style={CommonStyles.title}>Register Page</Text>
 
             <TextInput style={CommonStyles.input} placeholder="Email" value={email} onChangeText={setEmail} />
-            <TextInput style={CommonStyles.input} placeholder="Full Name" value={fullName} onChangeText={setfullName} />
+            <TextInput style={CommonStyles.input} placeholder="Name" value={name} onChangeText={setName} />
             <TextInput
                 style={CommonStyles.input}
                 placeholder="Password"

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View, Alert, TouchableOpacity } from "react-native";
 import { resetPassword } from "../../api/API";
-import CommonStyles from "../../assets/styles/CommonStyles";
-
+//import CommonStyles from "/assets/styles/CommonStyles";
+import CommonStyles from "../../../assets/styles/CommonStyles";
 const ResetPassword = ({ navigation, route }) => {
     const [newPassword, setNewPassword] = useState("");
 

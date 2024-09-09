@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View, Alert, TouchableOpacity, ActivityIndicator } from "react-native";
 import { forgotPassword, validateOtp } from "../../api/API";
-import CommonStyles from "../../assets/styles/CommonStyles";
+import CommonStyles from "../../../assets/styles/CommonStyles";
 import Toast from "react-native-toast-message";
 
 const ForgotPassword = ({ navigation }) => {
@@ -25,6 +25,7 @@ const ForgotPassword = ({ navigation }) => {
     const handleResetPassword = async () => {
         setLoading(true);
         try {
+
             const data = await forgotPassword(email);
 
             if (data.success) {
@@ -34,7 +35,7 @@ const ForgotPassword = ({ navigation }) => {
                 showToast("error", "Error", data.message);
             }
         } catch (error) {
-            showToast("error", "Error", "An error occurred. Please try again.");
+            showToast("error", "Error", "An " + error + " occurred. Please try again.");
         } finally {
             setLoading(false);
         }

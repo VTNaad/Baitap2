@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import CommonStyles from "../../assets/styles/CommonStyles";
-
+import CommonStyles from "../../../assets/styles/CommonStyles";
 const Home = ({ navigation, route }) => {
     const { name } = route.params;
 
